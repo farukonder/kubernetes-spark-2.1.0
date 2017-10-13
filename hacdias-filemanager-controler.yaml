@@ -1,1 +1,20 @@
-
+kind: ReplicationController
+apiVersion: v1
+metadata:
+  name: hacdias-filemanager
+spec:
+  replicas: 1
+  selector:
+    component: hacdias-filemanager
+  template:
+    metadata:
+      labels:
+        component: hacdias-filemanager
+    spec:
+      containers:
+        - name: hacdias-filemanager
+          image: hacdias/filemanager
+          ports:
+            - containerPort: 80
+          args :
+            - '--scope /'
