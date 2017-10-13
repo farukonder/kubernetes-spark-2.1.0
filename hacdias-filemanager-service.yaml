@@ -4,9 +4,8 @@ metadata:
   name: hacdias-filemanager
 spec:
   ports:
-    - port: 80
-      targetPort: 80
-      nodePort: 30002
+    - port: 2000
+      targetPort: 2000
       name: http
   type: NodePort
   selector:
