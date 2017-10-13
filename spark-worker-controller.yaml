@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - name: spark-worker-2-1-2
-          image: faruk/kube-worker-spark-2.1.2-h2.6
+          image: faruk/docker-spark-w-2.1.2-h2.6
           ports:
             - containerPort: 7077
             - containerPort: 8080
