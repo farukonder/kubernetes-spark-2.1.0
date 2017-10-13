@@ -3,6 +3,13 @@ apiVersion: v1
 metadata:
   name: hacdias-filemanager
 spec:
+  volumes:
+    - name: hostfolder-volume
+        hostPath:
+        # directory location on host
+        path: /tmp
+        #  this field is optional
+        type: DirectoryOrCreate
   replicas: 1
   selector:
     component: hacdias-filemanager
@@ -21,10 +28,4 @@ spec:
           volumeMounts:
             - mountPath: /hostfolder
               name: hostfolder-volume
-      volumes:
-        - name: hostfolder-volume
-          hostPath:
-            # directory location on host
-            path: /tmp
-            #  this field is optional
-            type: DirectoryOrCreate
+    
