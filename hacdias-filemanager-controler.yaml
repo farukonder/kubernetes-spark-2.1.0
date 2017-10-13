@@ -15,6 +15,6 @@ spec:
         - name: hacdias-filemanager
           image: hacdias/filemanager
           ports:
-            - containerPort: 80
+            - containerPort: 2000
           args : 
-            [--scope, /] 
+            [--port, 2000,--scope, /] 
