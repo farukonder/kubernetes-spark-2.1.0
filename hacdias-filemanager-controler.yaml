@@ -21,10 +21,10 @@ spec:
           volumeMounts:
             - mountPath: /hostfolder
               name: hostfolder-volume
-    volumes:
-    - name: hostfolder-volume
-      hostPath:
-        # directory location on host
-        path: /tmp
-        #  this field is optional
-        type: DirectoryOrCreate
+      volumes:
+        - name: hostfolder-volume
+          hostPath:
+            # directory location on host
+            path: /tmp
+            #  this field is optional
+            type: DirectoryOrCreate
