@@ -18,9 +18,9 @@ spec:
             - containerPort: 2000
           args : 
             [--port, "2000",--scope, "/"] 
-      volumeMounts:
-      - mountPath: /hostfolder
-        name: hostfolder-volume
+          volumeMounts:
+            - mountPath: /hostfolder
+              name: hostfolder-volume
     volumes:
     - name: hostfolder-volume
       hostPath:
