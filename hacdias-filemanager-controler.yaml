@@ -6,10 +6,8 @@ spec:
   volumes:
     - name: hostfolder-volume
         hostPath:
-        # directory location on host
-        path: /tmp
-        #  this field is optional
-        type: DirectoryOrCreate
+          path: /tmp
+          type: DirectoryOrCreate
   replicas: 1
   selector:
     component: hacdias-filemanager
