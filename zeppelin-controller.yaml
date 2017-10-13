@@ -11,11 +11,18 @@ spec:
       labels:
         component: zeppelin-2-1-2
     spec:
+      volumes:
+        - name: hostfolder-vol
+          hostPath:
+            path: /
       containers:
         - name: zeppelin
           image: apache/zeppelin:0.7.3
           ports:
             - containerPort: 8080
+          volumeMounts:
+            - mountPath: /hostfolder
+              name: hostfolder-vol
           resources:
             requests:
               cpu: 100m
