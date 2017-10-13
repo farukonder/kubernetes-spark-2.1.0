@@ -1,15 +1,15 @@
 kind: ReplicationController
 apiVersion: v1
 metadata:
-  name: zeppelin-controller-2.1.0
+  name: zeppelin-controller-2-1-0
 spec:
   replicas: 1
   selector:
-    component: zeppelin-2.1.0
+    component: zeppelin-2-1-0
   template:
     metadata:
       labels:
-        component: zeppelin-2.1.0
+        component: zeppelin-2-1-0
     spec:
       containers:
         - name: zeppelin
