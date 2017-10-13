@@ -12,7 +12,7 @@ spec:
         component: hacdias-filemanager
     spec:
       volumes:
-        - name: hostfolder-volume
+        - name: hostfolder-vol
           hostPath:
             path: /
       containers:
@@ -24,6 +24,6 @@ spec:
             [--port, "2000",--scope, "/"] 
           volumeMounts:
             - mountPath: /hostfolder
-              name: hostfolder-volume
+              name: hostfolder-vol
 
     
