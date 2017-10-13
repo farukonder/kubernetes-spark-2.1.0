@@ -11,6 +11,11 @@ spec:
       labels:
         component: hacdias-filemanager
     spec:
+      volumes:
+        - name: hostfolder-volume
+          hostPath:
+            path: /tmp
+          type: DirectoryOrCreate
       containers:
         - name: hacdias-filemanager
           image: hacdias/filemanager
@@ -21,9 +26,5 @@ spec:
           volumeMounts:
             - mountPath: /hostfolder
               name: hostfolder-volume
-      volumes:
-        - name: hostfolder-volume
-        hostPath:
-        path: /tmp
-        type: DirectoryOrCreate
+
     
