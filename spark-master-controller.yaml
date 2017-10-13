@@ -11,6 +11,10 @@ spec:
       labels:
         component: spark-master-2-1-2
     spec:
+      volumes:
+        - name: hostfolder-vol
+          hostPath:
+            path: /
       containers:
         - name: spark-master-2-1-2
           image: faruk/docker-spark-m-2.1.2-h2.6
@@ -23,6 +27,9 @@ spec:
             - "--"
           args :
             - 'unset SPARK_MASTER_PORT && echo $(hostname -i) "spark-master-2-1-2" >> /etc/hosts && /opt/spark/sbin/start-master.sh --ip spark-master-2-1-2 --port 7077 && sleep infinity'
+          volumeMounts:
+            - mountPath: /hostfolder
+              name: hostfolder-vol
           resources:
             requests:
               cpu: 100m
