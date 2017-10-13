@@ -1,7 +1,7 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: spark-master-2-1-0
+  name: spark-master-2-1-2
 spec:
   ports:
     - port: 7077
@@ -13,4 +13,4 @@ spec:
       name: http
   type: NodePort
   selector:
-    component: spark-master-2-1-0
+    component: spark-master-2-1-2
