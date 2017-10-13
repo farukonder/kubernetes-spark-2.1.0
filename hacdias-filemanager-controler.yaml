@@ -17,4 +17,4 @@ spec:
           ports:
             - containerPort: 2000
           args : 
-            [--port, 2000,--scope, /] 
+            [--port, "2000",--scope, "/"] 
