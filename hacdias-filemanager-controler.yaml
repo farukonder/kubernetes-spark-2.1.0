@@ -14,7 +14,7 @@ spec:
       volumes:
         - name: hostfolder-volume
           hostPath:
-            path: /tmp
+            path: /
       containers:
         - name: hacdias-filemanager
           image: hacdias/filemanager
