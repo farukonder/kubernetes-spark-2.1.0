@@ -11,6 +11,10 @@ spec:
       labels:
         component: spark-worker-2-1-2
     spec:
+      volumes:
+        - name: hostfolder-vol
+          hostPath:
+            path: /
       containers:
         - name: spark-worker-2-1-2
           image: faruk/docker-spark-w-2.1.2-h2.6
@@ -23,6 +27,9 @@ spec:
             - "--"
           args :
             - 'env && unset SPARK_MASTER_PORT && /opt/spark/sbin/start-slave.sh spark://spark-master-2-1-2:7077 && sleep infinity'
+          volumeMounts:
+            - mountPath: /hostfolder
+              name: hostfolder-vol
           resources:
             requests:
               cpu: 100m
