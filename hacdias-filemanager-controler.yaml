@@ -15,7 +15,6 @@ spec:
         - name: hostfolder-volume
           hostPath:
             path: /tmp
-            type: DirectoryOrCreate
       containers:
         - name: hacdias-filemanager
           image: hacdias/filemanager
